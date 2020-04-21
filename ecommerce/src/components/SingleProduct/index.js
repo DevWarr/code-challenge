@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import { useRouteMatch } from 'react-router-dom';
 import ProductCard from '../ProductList/ProductCard';
+import axiosWithURL from '../../utils/axiosWithURL';
 
 export default function SingleProduct({ products }) {
 	const [oneProduct, setOneProduct] = React.useState({});
@@ -16,8 +16,8 @@ export default function SingleProduct({ products }) {
 		if (singleProd) {
 			setOneProduct(singleProd);
 		} else {
-			axios
-				.get(`http://localhost:3333/products/${guid}`)
+			axiosWithURL()
+				.get(`/products/${guid}`)
 				.then((res) => {
 					setOneProduct(res.data);
 					console.log(res.data);

@@ -3,12 +3,12 @@ import { headingPages02 } from '../../images';
 import Sorting from './Sorting';
 import Filter from './Filter';
 import ProductCard from './ProductCard';
-import axios from 'axios';
+import axiosWithURL from '../../utils/axiosWithURL';
 
 export default function ProductList({ allProducts, products, setProducts, setSorting, setRange }) {
 	React.useEffect(() => {
-		axios
-			.get('http://localhost:3333/products')
+		axiosWithURL()
+			.get('/products')
 			.then((res) => {
 				setProducts(res.data);
 				console.log(res.data);
