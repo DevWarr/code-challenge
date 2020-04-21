@@ -242,13 +242,15 @@ export default function SingleProduct({ products }) {
 					<div className="wrap-slick2">
 						<div className="slick2">
 							{products.length &&
-								products.map((prod) => {
-									return (
-										<div key={prod.guid} className="item-slick2 p-l-15 p-r-15">
-											<ProductCard product={prod} />
-										</div>
-									);
-								})}
+								products
+									.filter((prod, i) => i < 6)
+									.map((prod) => {
+										return (
+											<div key={prod.guid} className="item-slick2 p-l-15 p-r-15">
+												<ProductCard product={prod} />
+											</div>
+										);
+									})}
 						</div>
 					</div>
 				</div>
