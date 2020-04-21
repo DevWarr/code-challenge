@@ -25,7 +25,7 @@ export default function ProductCard({ product }) {
 					{product.name}
 				</Link>
 
-				<span className="block2-price m-text6 p-r-5">{product.price}</span>
+				<span className="block2-price m-text6 p-r-5">${product.price}</span>
 			</div>
 		</div>
 	);

@@ -5,7 +5,7 @@ import Filter from './Filter';
 import ProductCard from './ProductCard';
 import axios from 'axios';
 
-export default function ProductList({ products, setProducts }) {
+export default function ProductList({ allProducts, products, setProducts, setSorting, setRange }) {
 	React.useEffect(() => {
 		axios
 			.get('http://localhost:3333/products')
@@ -36,18 +36,24 @@ export default function ProductList({ products, setProducts }) {
 						<Filter />
 
 						<div className="col-sm-6 col-md-8 col-lg-9 p-b-50">
-							<Sorting />
+							<Sorting
+								setSorting={setSorting}
+								setRange={setRange}
+								resultCount={allProducts.length}
+								currentCount={products.length}
+							/>
 
 							{/* <!-- Product --> */}
 							<div className="row">
-								{products.length &&
-									products.map((prod) => {
-										return (
-											<div className="col-sm-12 col-md-6 col-lg-4 p-b-50">
-												<ProductCard key={prod.guid} product={prod} />
-											</div>
-										);
-									})}
+								{products.length
+									? products.map((prod) => {
+											return (
+												<div key={prod.guid} className="col-sm-12 col-md-6 col-lg-4 p-b-50">
+													<ProductCard product={prod} />
+												</div>
+											);
+									  })
+									: null}
 							</div>
 
 							{/* <!-- Pagination --> */}
