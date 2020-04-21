@@ -1,6 +1,39 @@
 import React from 'react';
 
-export default function Filter() {
+export default function Filter({ setRange }) {
+	const [slider, setSlider] = React.useState(0);
+	const sliderValues = [
+		[0, Infinity],
+		[0, 50],
+		[50, 100],
+		[100, 150],
+		[150, 200],
+		[200, Infinity],
+	];
+
+	/**
+	 *
+	 * @param {Number} lowOrUp - 0 = lower; 1 = upper
+	 */
+	const getSliderValue = (lowOrUp) => {
+		if (slider === 0) {
+			return <div className="s-text3 p-t-10 p-b-10">All Prices</div>;
+		} else if (sliderValues[slider][1] === Infinity) {
+			return (
+				<div className="s-text3 p-t-10 p-b-10">
+					Range: $<span id="value-lower">{sliderValues[slider][0]}</span>+
+				</div>
+			);
+		} else {
+			return (
+				<div className="s-text3 p-t-10 p-b-10">
+					Range: $<span id="value-lower">{sliderValues[slider][0]}</span> - $
+					<span id="value-upper">{sliderValues[slider][1]}</span>
+				</div>
+			);
+		}
+	};
+
 	return (
 		<div className="col-sm-6 col-md-4 col-lg-3 p-b-50">
 			<div className="leftbar p-r-20 p-r-0-sm">
@@ -46,18 +79,27 @@ export default function Filter() {
 					<div className="m-text15 p-b-17">Price</div>
 
 					<div className="wra-filter-bar">
-						<input type="range" />
+						<input
+							type="range"
+							value={slider}
+							min="0"
+							max="5"
+							onChange={(e) => setSlider(e.target.value)}
+						/>
 					</div>
 
 					<div className="flex-sb-m flex-w p-t-16">
 						<div className="w-size11">
 							{/* <!-- Button --> */}
-							<button className="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">Filter</button>
+							<button
+								onClick={() => setRange(sliderValues[slider])}
+								className="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4"
+							>
+								Filter
+							</button>
 						</div>
 
-						<div className="s-text3 p-t-10 p-b-10">
-							Range: $<span id="value-lower">610</span> - $<span id="value-upper">980</span>
-						</div>
+						{getSliderValue()}
 					</div>
 				</div>
 

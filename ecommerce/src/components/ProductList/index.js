@@ -33,7 +33,7 @@ export default function ProductList({ allProducts, products, setProducts, setSor
 			<section className="bgwhite p-t-55 p-b-65">
 				<div className="container">
 					<div className="row">
-						<Filter />
+						<Filter setRange={setRange} />
 
 						<div className="col-sm-6 col-md-8 col-lg-9 p-b-50">
 							<Sorting
