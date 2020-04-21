@@ -4,85 +4,85 @@ import { itemCart02, itemCart01, itemCart03 } from '../../images';
 
 export default function HeaderMobile() {
 	return (
-		<div class="wrap_header_mobile">
+		<div className="wrap_header_mobile">
 			{/* <!-- Logo moblie --> */}
-			<a href="index.html" class="logo-mobile">
+			<a href="index.html" className="logo-mobile">
 				<img src={logo} alt="IMG-LOGO" />
 			</a>
 
 			{/* <!-- Button show menu --> */}
-			<div class="btn-show-menu">
+			<div className="btn-show-menu">
 				{/* <!-- Header Icon mobile --> */}
-				<div class="header-icons-mobile">
-					<a href="#" class="header-wrapicon1 dis-block">
-						<img src={iconHeader01} class="header-icon1" alt="ICON" />
+				<div className="header-icons-mobile">
+					<a href="#" className="header-wrapicon1 dis-block">
+						<img src={iconHeader01} className="header-icon1" alt="ICON" />
 					</a>
 
-					<span class="linedivide2"></span>
+					<span className="linedivide2"></span>
 
-					<div class="header-wrapicon2">
-						<img src={iconHeader02} class="header-icon1 js-show-header-dropdown" alt="ICON" />
-						<span class="header-icons-noti">0</span>
+					<div className="header-wrapicon2">
+						<img src={iconHeader02} className="header-icon1 js-show-header-dropdown" alt="ICON" />
+						<span className="header-icons-noti">0</span>
 
 						{/* <!-- Header cart noti --> */}
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
+						<div className="header-cart header-dropdown">
+							<ul className="header-cart-wrapitem">
+								<li className="header-cart-item">
+									<div className="header-cart-item-img">
 										<img src={itemCart01} alt="IMG" />
 									</div>
 
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
+									<div className="header-cart-item-txt">
+										<a href="#" className="header-cart-item-name">
 											White Shirt With Pleat Detail Back
 										</a>
 
-										<span class="header-cart-item-info">1 x $19.00</span>
+										<span className="header-cart-item-info">1 x $19.00</span>
 									</div>
 								</li>
 
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
+								<li className="header-cart-item">
+									<div className="header-cart-item-img">
 										<img src={itemCart02} alt="IMG" />
 									</div>
 
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
+									<div className="header-cart-item-txt">
+										<a href="#" className="header-cart-item-name">
 											Converse All Star Hi Black Canvas
 										</a>
 
-										<span class="header-cart-item-info">1 x $39.00</span>
+										<span className="header-cart-item-info">1 x $39.00</span>
 									</div>
 								</li>
 
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
+								<li className="header-cart-item">
+									<div className="header-cart-item-img">
 										<img src={itemCart03} alt="IMG" />
 									</div>
 
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
+									<div className="header-cart-item-txt">
+										<a href="#" className="header-cart-item-name">
 											Nixon Porter Leather Watch In Tan
 										</a>
 
-										<span class="header-cart-item-info">1 x $17.00</span>
+										<span className="header-cart-item-info">1 x $17.00</span>
 									</div>
 								</li>
 							</ul>
 
-							<div class="header-cart-total">Total: $75.00</div>
+							<div className="header-cart-total">Total: $75.00</div>
 
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
+							<div className="header-cart-buttons">
+								<div className="header-cart-wrapbtn">
 									{/* <!-- Button --> */}
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="cart.html" className="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
 								</div>
 
-								<div class="header-cart-wrapbtn">
+								<div className="header-cart-wrapbtn">
 									{/* <!-- Button --> */}
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="#" className="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										Check Out
 									</a>
 								</div>
@@ -91,9 +91,9 @@ export default function HeaderMobile() {
 					</div>
 				</div>
 
-				<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
+				<div className="btn-show-menu-mobile hamburger hamburger--squeeze">
+					<span className="hamburger-box">
+						<span className="hamburger-inner"></span>
 					</span>
 				</div>
 			</div>

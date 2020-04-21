@@ -5,7 +5,7 @@ import MenuMobile from "./MenuMobile"
 
 export default function Header() {
     return (
-        <header>
+        <header className="header1">
             <HeaderDesktop />
             <HeaderMobile />
             <MenuMobile />
