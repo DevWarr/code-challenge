@@ -1,22 +1,17 @@
-import React from "react"
+import React from 'react';
 
-
-export default function MenuMobile() {
-    return (
-        <div className="wrap-side-menu" >
+export default function MenuMobile({ showMenu }) {
+	return (
+		<div className="wrap-side-menu" style={{ display: showMenu ? 'flex' : 'none' }}>
 			<nav className="side-menu">
 				<ul className="main-menu">
 					<li className="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-						<span className="topbar-child1">
-							Free shipping for standard order over $100
-						</span>
+						<span className="topbar-child1">Free shipping for standard order over $100</span>
 					</li>
 
 					<li className="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<div className="topbar-child2-mobile">
-							<span className="topbar-email">
-								fashe@example.com
-							</span>
+							<span className="topbar-email">fashe@example.com</span>
 
 							<div className="topbar-language rs1-select2">
 								<select className="selection-1" name="time">
@@ -40,9 +35,15 @@ export default function MenuMobile() {
 					<li className="item-menu-mobile">
 						<a href="index.html">Home</a>
 						<ul className="sub-menu">
-							<li><a href="index.html">Homepage V1</a></li>
-							<li><a href="home-02.html">Homepage V2</a></li>
-							<li><a href="home-03.html">Homepage V3</a></li>
+							<li>
+								<a href="index.html">Homepage V1</a>
+							</li>
+							<li>
+								<a href="home-02.html">Homepage V2</a>
+							</li>
+							<li>
+								<a href="home-03.html">Homepage V3</a>
+							</li>
 						</ul>
 						<i className="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
 					</li>
@@ -73,5 +74,5 @@ export default function MenuMobile() {
 				</ul>
 			</nav>
 		</div>
-    )
+	);
 }
