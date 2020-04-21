@@ -1,17 +1,20 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import ProductList from './ProductList';
+import SingleProduct from './SingleProduct';
 import Header from './Header';
 import Footer from './Footer';
 
 function App() {
+	const [products, setProducts] = React.useState([]);
+
 	return (
-		<>
-      <Header />
-			<Route exact path="/" component={ProductList} />
-			{/* <Route path="/product/:id" component={ProductView} /> */}
-      <Footer />
-		</>
+		<div className="animsition">
+			<Header />
+			<Route exact path="/" render={() => <ProductList products={products} setProducts={setProducts} />} />
+			<Route path="/product-detail/:id" render={() => <SingleProduct products={products} />} />
+			<Footer />
+		</div>
 	);
 }
 
